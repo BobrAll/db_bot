@@ -3,7 +3,7 @@ from telebot import types
 
 bot = telebot.TeleBot("6453743339:AAELoAuShU3elB7Xum6FQdDXPcvbrKZpDwA")
 store_id = None
-command = 'a'
+command = ''
 
 user_addresses = {}
 available_addresses = ['Адрес 1', 'Адрес 2', 'Адрес 3']  # load from db
@@ -20,7 +20,7 @@ def start(message):
     for address in available_addresses:
         markup.add(types.KeyboardButton(address))
 
-    bot.send_message(id, "Выберите адрес из списка:", reply_markup=markup)
+    bot.send_message(id, "Выберите адрес вашего магазина:", reply_markup=markup)
     user_addresses[id] = None  # Инициализируем адрес пользователя значением None
 
 
